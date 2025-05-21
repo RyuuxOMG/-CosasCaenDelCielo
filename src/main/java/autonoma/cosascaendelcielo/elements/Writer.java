@@ -1,13 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package autonoma.cosascaendelcielo.elements;
 
-/**
- *
- * @author LAPTOP
- */
-public class Writer {
-    
+import java.io.IOException;
+
+public interface Writer {
+    public abstract void write(String file) throws IOException;
 }

@@ -1,13 +1,22 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package autonoma.cosascaendelcielo.elements;
 
-/**
- *
- * @author LAPTOP
- */
-public class AddPoisonThread {
-    
+public class AddPoisonThread implements Runnable {
+    private Sky sky;
+    private boolean running = true;
+
+    public AddPoisonThread(Sky sky) {
+        this.sky = sky;
+    }
+
+    @Override
+    public void run() {
+        while (running) {
+            this.sky.addSprites(0, 1);
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
+    }
 }
